@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Hidden and Touch Disabled</title>
+  <style>
+    /* 페이지의 기본 스타일 */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      cursor: none; /* 마우스 커서 숨기기 */
+      touch-action: none; /* 터치 제스처를 비활성화 */
+    }
+
+    /* 터미널 느낌을 주는 스타일 */
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>마우스 커서가 숨겨지고 터치가 비활성화된 페이지입니다!</h1>
+  
+  <script>
+    // 마우스 클릭과 터치 이벤트를 강제로 차단합니다.
+    window.addEventListener('mousedown', function (e) {
+      e.preventDefault(); // 마우스 클릭 방지
+    });
+
+    window.addEventListener('touchstart', function (e) {
+      e.preventDefault(); // 터치 이벤트 방지
+    });
+
+    // 마우스 커서를 숨깁니다 (이 부분은 CSS에서 처리)
+    document.body.style.cursor = 'none';  // 커서 숨기기
+  </script>
+</body>
+</html>
